@@ -1,0 +1,21 @@
+<div id="form">
+  <h2>Log in</h2>
+
+  <form action="/auth/login" method="POST">
+    <label> username
+      <input type="text" name="username" placeholder="Username" />
+    </label>
+ 
+    <label> email
+      <input type="text" name="email" placeholder="E-mail" />
+    </label>
+ 
+    <label> password
+      <input type="password" name="password" placeholder="Password" />
+    </label>
+ 
+    <button type="submit">Create account</button>
+ 
+    {{!-- error message will be added here --}}
+  </form>
+</div>
