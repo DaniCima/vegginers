@@ -1,25 +1,24 @@
 <div id="form">
-  <h2>Log in</h2>
-
   <form action="/auth/login" method="POST">
-    <div>
+  <div class="signupform col-sm-12 col-md-6">
+    <h2 class="h2Signup">Log in</h2>
+    <br>
+      <div class="col-md-12">
       <label> username </label>
       <input type="text" name="username" placeholder="Username" />
     </div>
     
-  <div>
+  <div class="col-md-12">
       <label> email</label>
     <input type="text" name="email" placeholder="E-mail" />
   </div>
     
-  <div>
+  <div class="col-md-12">
       <label> password</label>
     <input type="password" name="password" placeholder="Password" />
   </div>
-    
- 
-    <button type="submit">Log in</button>
- 
-    {{!-- error message will be added here --}}
+    <button class="btn btn-primary btn-lg btn-full-width" type="submit">Log in</button>
+
+    {{! error message will be added here }}
+    </div>
   </form>
-</div>
