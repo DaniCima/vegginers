@@ -30,5 +30,25 @@ router.post("/create", (req, res) => {
     })
     .catch((err) => console.error(err));
 });
+/*
+router.get("/single-post/:id", (req, res) => {
+  // const loggedInNavigation = true;
+  const id = req.params.id;
+  Post.findById(id, function (err, docs) {
+    if (err){
+        console.log(err);
+    }
+    else{
+        console.log("Result : ", docs);
+    }
+})
+.then((posts) => {
+  //const loggedInNavigation = req.session.hasOwnProperty("currentUser");
+  res.render("posts/single-post", { posts });
+})
+.catch((err) => console.error(err));
+});
+  // .populate("owner")
+  */
 
 module.exports = router;

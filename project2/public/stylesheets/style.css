@@ -12,22 +12,26 @@ margin-top: 10%;
 display: flex;
 align-items: center;
 }
-/*Nav Bar*/
-.navbar{
-  height: 100px;
-  display: flex;
-
-}
-.navDiv{
-  width: 120px;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 100px;
+#form{
+margin-top: 2%;
 }
 .logo{
-  height: 80px;
+  height: 60px;
   width: auto;
   margin-left: 50px;
+}
+.logoDiv{
+  display: flex;
+  align-items: center;
+  font-family: 'Courgette', cursive;
+}
+.frontElements{
+  width: 100vw;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+h2{
+  margin-top: 30px;
 }
 
 /*Sign up Log in*/
@@ -37,10 +41,9 @@ align-items: center;
   flex-direction: column;
   align-items:center;
   padding: 0 15px;
-}
-.btnSignup{
-  width: 200px;
-
+  height: 70vh;
+  width: 50vw;
+  border: 2px solid rgb(201, 199, 199);
 }
 .h2Signup{
   font-size: 60px;
@@ -56,8 +59,8 @@ input[type=text], input[type=password]{
 }
 
 .btn-primary{
-  background: #90afae;
-  border-color: #90afae;
+  background: #77c1be;
+  border-color: #77c1be;
 }
 
 .btn-primary:hover{
@@ -66,7 +69,7 @@ input[type=text], input[type=password]{
 }
 
 .btn-full-width{
-  margin-top: 10px;
+  margin-top: 20px;
   width:100%;
 }
 
