@@ -2,17 +2,21 @@
   <h2>Log in</h2>
 
   <form action="/auth/login" method="POST">
-    <label> username
+    <div>
+      <label> username </label>
       <input type="text" name="username" placeholder="Username" />
-    </label>
- 
-    <label> email
-      <input type="text" name="email" placeholder="E-mail" />
-    </label>
- 
-    <label> password
-      <input type="password" name="password" placeholder="Password" />
-    </label>
+    </div>
+    
+  <div>
+      <label> email</label>
+    <input type="text" name="email" placeholder="E-mail" />
+  </div>
+    
+  <div>
+      <label> password</label>
+    <input type="password" name="password" placeholder="Password" />
+  </div>
+    
  
     <button type="submit">Log in</button>
  
