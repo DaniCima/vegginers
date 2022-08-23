@@ -1,31 +1,58 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
+  
 }
 /*Index*/
 .title{
 font-family: 'Courgette', cursive;
-font-size: 200px;
+font-size: 300px;
+text-align: center;
+color: rgb(50, 97, 91);
+margin-top: 10%;
 }
-.indexBtnDiv{
-  width:600px;
-  display: flex;
-  justify-content: space-between;
-}
-a{
-  text-decoration: none;
-  color: rgb(10, 11, 11);
-}
+
 .indexElements{
 display: flex;
-flex-direction: column;
 align-items: center;
 }
-.indexBtn{
+/*Nav Bar*/
+.navbar{
+  height: 100px;
+  display: flex;
+
+}
+.navDiv{
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 100px;
+}
+.logo{
+  height: 80px;
+  width: auto;
+  margin-left: 50px;
+}
+
+/*Sign up Log in*/
+.signupform{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.btnSignup{
   width: 200px;
-  height: 50px;
-  background-color: rgb(79, 128, 129);
-  border-radius: 15px;
+
+}
+.h2Signup{
+  font-size: 100px;
+}
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
 
 

@@ -6,25 +6,24 @@ const userSchema = new Schema(
     username: {
       type: String,
       trim: true,
-      required: [true, 'Username is required.'],
-      unique: true
+      required: [true, "Username is required."],
+      unique: true,
     },
     email: {
       type: String,
       trim: true,
-      required: [true, 'Email is required.'],
-      unique: true
+      required: [true, "Email is required."],
+      unique: true,
     },
-    passwordHash:{ 
+    passwordHash: {
       type: String,
-    required: [true, 'Password is required.']
-    }
+      required: [true, "Password is required."],
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
-
 );
 
 const User = model("User", userSchema);
