@@ -1,12 +1,39 @@
-<h1>Create a new post</h1>
+
 <form action="/posts/create" method="POST">
-  <label for="">Title</label>
-  <input type="text" name="title" id="" />
+<div class="signupform col-sm-12 col-md-6">
+ <h2 class="h2Signup">Create a post</h2>
 
-  <label for="">History:</label>
-  <textarea name="history" id="" cols="30" rows="10"></textarea>
+ <div class="col-md-12">
+    <label>Title:</label>
+    <input type="text" name="title"</>
+    </div>
 
-  <label for="">Add image</label>
-  <input type="text" name="imageUrl" id="" />
-  <button type="submit">UP</button>
+   <div class="col-md-12">
+      <label for="">Add Image:</label>
+    <input accept="image/*" name="imageUrl" id="" />
+  </div>
+
+  <div class="col-md-12">
+      <label for="">Description:</label>
+    <input type="text" name="history" class="post-create-description">
+  </div>
+  
+
+  
+  <button class="btn btn-primary btn-lg btn-full-width" type="submit">Create a Post</button>
+
+  
+</div>
+ 
 </form>
+
+
+
+
+
+
+
+  
+
+ 
+   

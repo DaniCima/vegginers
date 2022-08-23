@@ -70,6 +70,22 @@ input[type=text], input[type=password]{
   width:100%;
 }
 
+/*Create post form */
+
+.post-create-description{
+  height: 200px;
+}
+
+.post-container{
+  display: block;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items:center;
+  padding: 0 15px;
+}
+
+
+
 @media only screen 
    and (max-width: 600px){
     .h2Signup{
