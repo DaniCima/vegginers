@@ -95,12 +95,26 @@ input[type=text], input[type=password]{
  /*Profile*/
 a{
   text-decoration: none;
+  color: black;
   
 }
 .btnCreatePost{
   color: white;
+  width: 150px;
 }
-
+.elementsProfile{
+  border: 2px solid rgb(201, 199, 199);
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items:center;
+  padding: 0 15px;
+}
+.titleProfile{
+  text-align: center;
+  font-size: 60px;
+}
 
 /*Create post form */
 
