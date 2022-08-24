@@ -26,48 +26,69 @@ router.post("/create", (req, res) => {
   console.log("user id", _id);
   Post.create({ title, history, imageUrl, owner: _id })
     .then((newPost) => {
-      res.redirect("/posts/post-list");
+      res.redirect("/auth/profile");
     })
     .catch((err) => console.error(err));
 });
+/*
+router.get("/single-post/:id", (req, res) => {
+  // const loggedInNavigation = true;
+  const id = req.params.id;
+  Post.findById(id, function (err, docs) {
+    if (err){
+        console.log(err);
+    }
+    else{
+        console.log("Result : ", docs);
+    }
+})
+.then((posts) => {
+  //const loggedInNavigation = req.session.hasOwnProperty("currentUser");
+  res.render("posts/single-post", { posts });
+})
+.catch((err) => console.error(err));
+});
+  // .populate("owner")*/
+  
 
 
 // Reading the posts on the database
 
-Post.find(function(err, posts){
-  if(err){
-    console.log(err);
-  }else{
-    // console.log(posts)
-    posts.forEach(function(post){
-      console.log(post.title);
-    })
-  }
-});
+// Post.find(function(err, posts){
+//   if(err){
+//     console.log(err);
+//   }else{
+//     // console.log(posts)
+//     posts.forEach(function(post){
+//       console.log(post.title);
+//     })
+//   }
+// });
 
 
 //updating the posts on database
 
-Post.updateOne({_id:"63053eb422b41f5cd91a5c8a"}, {title: "itworked"}, function(err){
-  if(err){
-    console.log(err);
-  } else{
-    console.log("Successfully updated the document.")
-  }
+// Post.updateOne({_id:"63053eb422b41f5cd91a5c8a"}, {title: "itworked"}, function(err){
+//   if(err){
+//     console.log(err);
+//   } else{
+//     console.log("Successfully updated the document.")
+//   }
+// })
+
+
+router.get("/delete/:postID", function(req, res){
+const {postID} = req.params;
+
+Post.findByIdAndDelete(postID)
+.then(function(){
+res.redirect("/auth/profile")
+}) 
+.catch(function(err){
+  console.log(err)
 })
 
-//delete from database
 
-Post.deleteOne({title: "final test"}, function(err){
-  if(err){
-    console.log(err);
-  } else{
-    console.log("Successfully deleted the document.")
-  }
-});
-
-router.post("/delete", function(req, res){
-console.log(req.body);
 })
 
 

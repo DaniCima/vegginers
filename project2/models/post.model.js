@@ -17,12 +17,5 @@ const postSchema = new Schema(
 
 const Post = model("Post", postSchema);
 
-const post = new Post({
-  title: "test",
-  history: "test",
-  imageUrl: "test",
-});
-
-// post.save();
 
 module.exports = Post;

@@ -3,14 +3,15 @@ const User = require("../models/User.model");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
+const Post = require("../models/post.model");
 
-router.get("/signup",isLoggedOut, (req, res) => {
-  console.log(req.session);
+router.get("/signup", (req, res) => {
+  //console.log(""req.session);
   res.render("auth/signup");
 });
-router.post("/signup",isLoggedOut, (req, res) => {
+router.post("/signup", (req, res) => {
   const { username, email, password } = req.body;
-
+  console.log("**********",req.body)
   bcrypt
     .genSalt(saltRounds)
     .then((salt) => bcrypt.hash(password, salt))
@@ -23,25 +24,27 @@ router.post("/signup",isLoggedOut, (req, res) => {
     })
     .then((userFromDB) => {
       console.log("Newly created user is: ", userFromDB);
-      res.redirect("/auth/login");
+      res.redirect("/");
     })
     .catch((error) => console.log(error));
 });
 
-router.get("/profile", isLoggedIn, (req, res) => {
-  //console.log('profile page', req.session);
-  //const { username } = req.session.currentUser;
-  res.render("auth/profile");
+router.get("/profile", isLoggedIn, async(req, res) => {
+  const { username } = req.session.currentUser;
+  const allPosts= await Post.find()
+  res.render("auth/profile", {username, allPosts});
+  
 });
 
-router.get("/login", isLoggedOut, (req, res) => {
+
+/*router.get("/login", isLoggedOut, (req, res) => {
   //console.log('req session', req.session);
-  res.render("auth/login");
-});
+  res.redirect("/");
+});*/
 
 router.post("/login", (req, res) => {
   const { username, email, password } = req.body;
-  console.log("req sessiooon", req.session);
+  //console.log("req sessiooon", req.session);
 
   // Check for empty fields
   if (username === "" || password === "" || email === "") {
@@ -60,7 +63,7 @@ router.post("/login", (req, res) => {
         return;
       } else if (bcrypt.compareSync(password, user.passwordHash)) {
         req.session.currentUser = user;
-        res.render("auth/profile", user);
+        res.redirect("/auth/profile");
       } else {
         res.render("auth/login", { errorMessage: "Incorrect password." });
       }
@@ -71,7 +74,8 @@ router.post("/login", (req, res) => {
 router.post("/logout", (req, res, next) => {
   req.session.destroy((err) => {
     if (err) next(err);
-    res.redirect("/auth/login");
+    res.redirect("/");
   });
 });
+
 module.exports = router;

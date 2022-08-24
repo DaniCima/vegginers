@@ -1,5 +1,29 @@
 
-<h1 class="title">Vegginers</h1>
+<div id="form">
+  <form action="/auth/login" method="POST">
+  <div class="signupform col-sm-12 col-md-6">
+    <h2 class="h2Signup">Log in</h2>
+      <div class="col-md-12">
+      <label> username </label>
+      <input type="text" name="username" placeholder="Username" />
+    </div>
+    
+  <div class="col-md-12">
+      <label> email</label>
+    <input type="text" name="email" placeholder="E-mail" />
+  </div>
+    
+  <div class="col-md-12">
+      <label> password</label>
+    <input type="password" name="password" placeholder="Password" />
+  </div>
 
-
-
+    <button class="btn btn-primary btn-lg btn-full-width" type="submit">Log in</button>
+    {{! error message will be added here }}
+    <div class="signUpContainer">
+    <p>Still not part of our community?</p>
+    <a class="btn btn-primary btn-lg signupbtn"  href="/auth/signup">Sign up</a>
+    </div>
+    </div>
+  </form>
+  
