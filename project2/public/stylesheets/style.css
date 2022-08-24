@@ -24,6 +24,7 @@ margin-top: 2%;
   display: flex;
   align-items: center;
   font-family: 'Courgette', cursive;
+  width: 50%;
 }
 .frontElements{
   width: 100vw;
@@ -41,13 +42,15 @@ h2{
   flex-direction: column;
   align-items:center;
   padding: 0 15px;
-  height: 70vh;
-  width: 50vw;
+  height: 80vh;
+  width: 40vw;
   border: 2px solid rgb(201, 199, 199);
 }
 .h2Signup{
   font-size: 60px;
   margin-top: 35px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 input[type=text], input[type=password]{
   width: 100%;
@@ -61,6 +64,7 @@ input[type=text], input[type=password]{
 .btn-primary{
   background: #77c1be;
   border-color: #77c1be;
+  margin-bottom: 40px;
 }
 
 .btn-primary:hover{
@@ -72,6 +76,31 @@ input[type=text], input[type=password]{
   margin-top: 20px;
   width:100%;
 }
+.signupbtn {
+  background-color:#c3e2e1;
+  border-color: #c3e2e1;
+}
+.signupbtn:hover {
+  background-color:#77c1be;
+}
+
+.signUpContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: 2px solid rgb(201, 199, 199);
+  padding-top: 50px;
+ }
+ /*Profile*/
+a{
+  text-decoration: none;
+  
+}
+.btnCreatePost{
+  color: white;
+}
+
 
 /*Create post form */
 

@@ -26,7 +26,7 @@ router.post("/create", (req, res) => {
   console.log("user id", _id);
   Post.create({ title, history, imageUrl, owner: _id })
     .then((newPost) => {
-      res.redirect("/posts/post-list");
+      res.redirect("/auth/profile");
     })
     .catch((err) => console.error(err));
 });
@@ -48,7 +48,7 @@ router.get("/single-post/:id", (req, res) => {
 })
 .catch((err) => console.error(err));
 });
-  // .populate("owner")
-  */
+  // .populate("owner")*/
+  
 
 module.exports = router;
