@@ -30,6 +30,28 @@ router.post("/create", (req, res) => {
     })
     .catch((err) => console.error(err));
 });
+
+router.get("/single-post/:postId", async (req, res) => {
+  const {postId} =req.params;
+  const foundPost = await Post.findById(postId)
+res.render("posts/single-post", {foundPost}) 
+})
+
+
+router.get("/edit/:postId", async (req, res)=>{
+  const {postId} =req.params;
+  const foundPost = await Post.findById(postId)
+  res.render("posts/edit-post", {foundPost}) 
+})
+
+
+router.post("/edit/:postId", async(req, res)=>{
+  const {postId} = req.params;
+  const updatedPost = await Post.findByIdAndUpdate(postId, req.body, {new: true})
+console.log(updatedPost);
+res.redirect("/auth/profile")
+})
+
 /*
 router.get("/single-post/:id", (req, res) => {
   // const loggedInNavigation = true;
@@ -63,6 +85,9 @@ router.get("/delete/:postID", function(req, res){
   
   
   })
+
+
+
 
   
 
