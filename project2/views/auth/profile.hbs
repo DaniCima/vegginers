@@ -5,10 +5,11 @@
 <form action="/auth/logout" method="POST">
   <button class="btn btn-primary btn-lg">Logout</button>
 </form>
-
 <button class="btn btn-primary btn-lg"><a class="btnCreatePost" href="/posts/create">Create a new Post</a></button>
+<div class="elementsProfile">
 
-<h2>Latest Posts</h2>
+<h2 class="titleProfile">Latest Posts</h2>
+
 <div class="post-container">
   {{#each allPosts}}
     
@@ -23,12 +24,7 @@
       </form>
     {{/if}} 
     <p>- posted by {{this.owner.username}}</p> --}}
-    <button>
-      <a href="">Edit</a>
-      </button>
-<button>
-      <a href="/posts/delete/{{this._id}}">Delete</a>
-      </button>
       
   {{/each}}
+</div>
 </div>

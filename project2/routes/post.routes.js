@@ -49,6 +49,21 @@ router.get("/single-post/:id", (req, res) => {
 .catch((err) => console.error(err));
 });
   // .populate("owner")*/
+
+router.get("/delete/:postID", function(req, res){
+  const {postID} = req.params;
+  
+  Post.findByIdAndDelete(postID)
+  .then(function(){
+  res.redirect("/auth/profile")
+  }) 
+  .catch(function(err){
+    console.log(err)
+  })
+  
+  
+  })
+
   
 
 
