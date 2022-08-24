@@ -1,18 +1,30 @@
-<h2>NEWS</h2>
+<h2>NEWS FEED</h2>
 <div class="post-container">
   {{#each posts}}
-    
-      <h3> <a href="/posts/{{this._id}}"> {{this.title}} </a></h3>
-      
-      <h4>{{this.history}}</h4>
+   
 
-      <img src="{{this.imageUrl}}" alt="" width="300" />
+
+
+
+   <form action="/delete" method="post">
+    <div>
+      <h3> {{this.title}} </a></h3>      
+      <img src="{{this.imageUrl}}" alt="" width="600" />
+      <h4>{{this.history}}</h4>
+      <button>Edit</button>
+      <button type="submit">Delete</button>
+    </div> 
+    </form> 
+
+
       {{!-- {{#if this.isOwner}}
       <form action="/posts/{{this._id}}/delete" method="POST">
         <button type="submit">Delete</button>
       </form>
     {{/if}} 
-    <p>- posted by {{this.owner.username}}</p> --}}
+    <p>- posted by {{postID}}</p> --}}
     
   {{/each}}
 </div>
+
+

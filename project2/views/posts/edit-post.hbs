@@ -1,0 +1,26 @@
+<h2>test</h2>
+
+<h2>EDIT FEED</h2>
+
+
+<div class="post-container">
+  {{#each posts}}
+    <div>
+      <h3> {{this.title}} </a></h3>
+
+      <img src="{{this.imageUrl}}" alt="" width="600" />
+
+      <h4>{{this.history}}</h4>
+    </div>  
+    
+      {{!-- {{#if this.isOwner}}
+      <form action="/posts/{{this._id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+      </form>
+    {{/if}} 
+    <p>- posted by {{this.owner.username}}</p> --}}
+    
+  {{/each}}
+</div>
+
+<button>Save changes</button>

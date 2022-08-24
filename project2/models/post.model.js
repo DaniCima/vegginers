@@ -4,10 +4,10 @@ const { Schema, model } = require("mongoose");
 const postSchema = new Schema(
   {
     title: { type: String },
-    history: { type: String },
+    history: { type: String },   //description
     imageUrl: { type: String },
     owner: { type: Schema.Types.ObjectId, ref: "User" },
-    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }], // we will update this field a bit later when we create review model
+    // comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }], // we will update this field a bit later when we create review model
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
@@ -16,5 +16,13 @@ const postSchema = new Schema(
 );
 
 const Post = model("Post", postSchema);
+
+const post = new Post({
+  title: "test",
+  history: "test",
+  imageUrl: "test",
+});
+
+// post.save();
 
 module.exports = Post;
