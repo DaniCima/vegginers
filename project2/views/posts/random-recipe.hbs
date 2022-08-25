@@ -6,4 +6,18 @@
   <img id="recipe-photo" src="" heigth="200px" />
 </div> --}}
 
-{{recipe.label}}
+<h3>{{recipe.label}}</h3>
+<div>
+  <img id="recipe-photo" src="{{recipe.image}}" heigth="300px" />
+</div>
+{{!-- 
+<h5>Ingredientes: {{recipe.ingredients.text}}</h5> --}}
+{{#each recipe.ingredients}}
+  <div class="ingrediente">
+    <img id="ingredient-photo" src="{{image}}" heigth="50px" />
+    <li><b>{{text}}</b></li>
+
+  </div>
+{{/each}}
+
+<a href="{{recipe.url}}"></a>

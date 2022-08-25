@@ -11,10 +11,10 @@ router.get("/random-recipe", (req, res) => {
       `https://api.edamam.com/api/recipes/v2?type=public&q=vegan&app_id=${pizza}&app_key=${vegana}`
     )
     .then((response) => {
-      // console.log(response.data.hits);
-      //const randomIndex = Ma;
+      //console.log(response.data.hits.images);
+      const randomIndex = Math.floor(Math.random() * 20);
 
-      const { recipe } = response.data.hits[0];
+      const { recipe } = response.data.hits[randomIndex];
       console.log(recipe);
 
       res.render("posts/random-recipe", { recipe });
