@@ -14,6 +14,7 @@ align-items: center;
 }
 #form{
 margin-top: 2%;
+height: 90vh;
 }
 .logo{
   height: 60px;
@@ -39,10 +40,9 @@ h2{
 .signupform{
   display: block;
   margin: 0 auto;
-  flex-direction: column;
   align-items:center;
   padding: 0 15px;
-  height: 80vh;
+  height: 90vh;
   width: 40vw;
   border: 2px solid rgb(201, 199, 199);
 }
