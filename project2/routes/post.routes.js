@@ -6,7 +6,6 @@ const Post = require("../models/post.model");
 
 // const fileUploader = require("../config/cloudinary.config");
 
-
 //CREATE POST
 
 router.get("/create", (req, res) => {
@@ -17,6 +16,7 @@ router.get("/create", (req, res) => {
 // router.post("/create", fileUploader.single("image"), (req, res) => {
 router.post("/create", (req, res) => {
   const { title, history, imageUrl } = req.body;
+  console.log("*****", req.body)
   const { _id } = req.session.currentUser;
   // const { path } = req.file;
   console.log("user id", _id);
@@ -60,7 +60,7 @@ res.redirect("/auth/profile")
 
 router.get("/delete/:postID", isLoggedIn,  function(req, res){
   const {postID} = req.params;
-  alert("Are you sure you want to delete this!!?")
+  //alert("Are you sure you want to delete this!!?")
   
   Post.findByIdAndDelete(postID)
   .then(function(){
@@ -69,10 +69,7 @@ router.get("/delete/:postID", isLoggedIn,  function(req, res){
   .catch(function(err){
     console.log(err)
   })
-    
   })
-
-
 
 router.get("/delete/:postID", function(req, res){
 const {postID} = req.params;
@@ -84,10 +81,6 @@ res.redirect("/auth/profile")
 .catch(function(err){
   console.log(err)
 })
-
-
 })
-
-
 
 module.exports = router;
