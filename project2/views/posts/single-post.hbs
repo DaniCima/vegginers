@@ -1,4 +1,29 @@
-{{foundPost.title}}
+{{!-- {{foundPost.title}} --}}
+<div class="signupform col-sm-12 col-md-6">
+
+<div class="col-md-12">
+    <label><strong>Title:</strong></label>
+    <input type="text" name="title" value="{{foundPost.title}}"/>
+    </div>
+
+<img id="output"> 
+
+
+<div>
+      <label for=""><strong>Add Image:</strong> </label>
+      <br>
+  <input type="file">
+  </div>
+<br>
+
+  <div class="col-md-12">
+      <label for=""><strong>Description & Recipe:</strong></label>
+    <input type="text" name="history" class="post-create-description" value="{{foundPost.history}}"/>
+  </div>
+
+
+{{#if checkCurrentUser}}
+
 
 <button>
     <a href="/posts/edit/{{foundPost._id}}">Edit</a>
@@ -7,3 +32,7 @@
 <button>
       <a href="/posts/delete/{{foundPost._id}}">Delete</a>
       </button>
+
+  {{/if}}    
+</div>
+

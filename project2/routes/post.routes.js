@@ -1,19 +1,11 @@
 const express = require("express");
 const router = express.Router();
-
-// const { isLoggedIn} = require("../middleware/route-guard");
-
+const { isLoggedIn} = require("../middleware/route-guard");
+const { isOwner } = require("../middleware/route-guard");
 const Post = require("../models/post.model");
 
-router.get("/post-list", (req, res) => {
-  Post.find()
-    // .populate("owner")
-    .then((posts) => {
-      //const loggedInNavigation = req.session.hasOwnProperty("currentUser");
-      res.render("posts/post-list", { posts });
-    })
-    .catch((err) => console.error(err));
-});
+
+//CREATE POST
 
 router.get("/create", (req, res) => {
   // const loggedInNavigation = true;
@@ -31,12 +23,19 @@ router.post("/create", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-router.get("/single-post/:postId", async (req, res) => {
+
+// SINGLE POST VIEW, TO LOGGED IN USERS
+
+router.get("/single-post/:postId", isLoggedIn, async (req, res) => {
   const {postId} =req.params;
   const foundPost = await Post.findById(postId)
-res.render("posts/single-post", {foundPost}) 
+  const userId = req.session.currentUser._id 
+  const checkCurrentUser = userId == foundPost.owner
+res.render("posts/single-post", {foundPost, checkCurrentUser}) 
+console.log(foundPost)
 })
 
+// EDIT POST (IF CURRENT SESSION = USER)
 
 router.get("/edit/:postId", async (req, res)=>{
   const {postId} =req.params;
@@ -52,27 +51,10 @@ console.log(updatedPost);
 res.redirect("/auth/profile")
 })
 
-/*
-router.get("/single-post/:id", (req, res) => {
-  // const loggedInNavigation = true;
-  const id = req.params.id;
-  Post.findById(id, function (err, docs) {
-    if (err){
-        console.log(err);
-    }
-    else{
-        console.log("Result : ", docs);
-    }
-})
-.then((posts) => {
-  //const loggedInNavigation = req.session.hasOwnProperty("currentUser");
-  res.render("posts/single-post", { posts });
-})
-.catch((err) => console.error(err));
-});
-  // .populate("owner")*/
 
-router.get("/delete/:postID", function(req, res){
+//DELETE POST (IF CURRENT SESSION = USER)
+
+router.get("/delete/:postID", isLoggedIn,  function(req, res){
   const {postID} = req.params;
   
   Post.findByIdAndDelete(postID)
@@ -92,29 +74,10 @@ router.get("/delete/:postID", function(req, res){
   
 
 
-// Reading the posts on the database
-
-// Post.find(function(err, posts){
-//   if(err){
-//     console.log(err);
-//   }else{
-//     // console.log(posts)
-//     posts.forEach(function(post){
-//       console.log(post.title);
-//     })
-//   }
-// });
 
 
-//updating the posts on database
 
-// Post.updateOne({_id:"63053eb422b41f5cd91a5c8a"}, {title: "itworked"}, function(err){
-//   if(err){
-//     console.log(err);
-//   } else{
-//     console.log("Successfully updated the document.")
-//   }
-// })
+
 
 
 router.get("/delete/:postID", function(req, res){
