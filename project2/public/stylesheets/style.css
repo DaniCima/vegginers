@@ -1,5 +1,8 @@
 
 /*Index*/
+*{
+  font-family: 'Montserrat', sans-serif;
+}
 .title{
 font-family: 'Courgette', cursive;
 font-size: 300px;
@@ -28,6 +31,7 @@ height: 90vh;
 }
 .logoDiv a{
   font-size: 30px;
+  font-family: 'Courgette', cursive;
 }
 .logout {
   display: inline-block;
@@ -213,6 +217,10 @@ form.header-logout {
   margin-bottom: 30px;
   margin-top: 30px;
 }
+.mainDishContainer a{
+margin-top: 30px;
+margin-left: 35px;
+}
 .mainDishDiv{
 display:flex;
 align-items: center;
@@ -221,8 +229,8 @@ margin-top: 50px;
 }
 .mainDishDiv img{
 max-width: 400px;
-margin-top: 40px;
-margin-bottom: 40px;
+margin-top: 50px;
+margin-bottom: 50px;
 }
 .ingredientsDiv{
 display: flex;
