@@ -5,11 +5,11 @@ const saltRounds = 10;
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard");
 const Post = require("../models/post.model");
 
-router.get("/signup", (req, res) => {
+router.get("/signup", isLoggedOut, (req, res) => {
   //console.log(""req.session);
   res.render("auth/signup");
 });
-router.post("/signup", (req, res) => {
+router.post("/signup", isLoggedOut, (req, res) => {
   const { username, email, password } = req.body;
   console.log("**********",req.body)
   bcrypt
@@ -41,7 +41,7 @@ router.get("/profile", isLoggedIn, async(req, res) => {
   res.redirect("/");
 });*/
 
-router.post("/login", (req, res) => {
+router.post("/login", isLoggedOut, (req, res) => {
   const { username, email, password } = req.body;
   //console.log("req sessiooon", req.session);
 
@@ -70,7 +70,7 @@ router.post("/login", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-router.post("/logout", (req, res, next) => {
+router.post("/logout",isLoggedIn, (req, res, next) => {
   req.session.destroy((err) => {
     if (err) next(err);
     res.redirect("/");
