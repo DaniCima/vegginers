@@ -4,7 +4,7 @@ const { isLoggedIn} = require("../middleware/route-guard");
 const { isOwner } = require("../middleware/route-guard");
 const Post = require("../models/post.model");
 
-// const fileUploader = require("../config/cloudinary.config");
+const fileUploader = require("../config/cloudinary.config");
 
 
 //CREATE POST
@@ -14,13 +14,14 @@ router.get("/create", (req, res) => {
   res.render("posts/create-post");
 });
 
-// router.post("/create", fileUploader.single("image"), (req, res) => {
-router.post("/create", (req, res) => {
-  const { title, history, imageUrl } = req.body;
+router.post("/create", fileUploader.single("image"), (req, res) => {
+// router.post("/create", (req, res) => {
+  const { title, history  } = req.body;
   const { _id } = req.session.currentUser;
   // const { path } = req.file;
   console.log("user id", _id);
-  Post.create({ title, history, imageUrl, owner: _id })
+  console.log(req.file.path)
+  Post.create({ title, history, imageUrl: req.file.path, owner: _id })
     .then((newPost) => {
       res.redirect("/auth/profile");
     })
@@ -60,7 +61,7 @@ res.redirect("/auth/profile")
 
 router.get("/delete/:postID", isLoggedIn,  function(req, res){
   const {postID} = req.params;
-  alert("Are you sure you want to delete this!!?")
+  // alert("Are you sure you want to delete this!!?")
   
   Post.findByIdAndDelete(postID)
   .then(function(){
