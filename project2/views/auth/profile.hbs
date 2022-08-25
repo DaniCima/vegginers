@@ -5,18 +5,26 @@
 <form action="/auth/logout" method="POST">
   <button class="btn btn-primary btn-lg">Logout</button>
 </form>
-<button class="btn btn-primary btn-lg"><a class="btnCreatePost" href="/posts/create">Create a new Post</a></button>
+<button class="btn btn-primary btn-lg"><a
+    class="btnCreatePost"
+    href="/posts/create"
+  >Create a new Post</a></button>
 <div class="elementsProfile">
 
-<h2 class="titleProfile">Latest Posts</h2>
+  <h4>Get your recipe today:</h4>
+  <a href="/api/random-recipe">Go!</a>
 
-<div class="post-container">
-  {{#each allPosts}}
-    
-      <h3> 
-        <a class="titlePosts" href="/posts/single-post/{{this._id}}"> {{this.title}} </a>
-        </h3>
-      
+  <h2 class="titleProfile">Latest Posts</h2>
+
+  <div class="post-container">
+    {{#each allPosts}}
+
+      <h3>
+        <a class="titlePosts" href="/posts/single-post/{{this._id}}">
+          {{this.title}}
+        </a>
+      </h3>
+
       <h4>{{this.history}}</h4>
 
       <img src="{{this.imageUrl}}" alt="" width="300" />
@@ -26,7 +34,7 @@
       </form>
     {{/if}} 
     <p>- posted by {{this.owner.username}}</p> --}}
-      
-  {{/each}}
-</div>
+
+    {{/each}}
+  </div>
 </div>
