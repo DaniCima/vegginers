@@ -5,10 +5,6 @@
     <label><strong>Title:</strong></label>
     <input type="text" name="title" value="{{foundPost.title}}"/>
     </div>
-
-
-<img id="output"> 
-
    <div>
       <label for=""><strong>Image:</strong> </label>
       <br>
@@ -20,11 +16,8 @@
       <label for=""><strong>Description & Recipe:</strong></label>
     <input type="text" name="history" class="post-create-description" value="{{foundPost.history}}"/>
   </div>
-
-
+  
 {{#if checkCurrentUser}}
-
-
 <button>
     <a href="/posts/edit/{{foundPost._id}}">Edit</a>
 </button>

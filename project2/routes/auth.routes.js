@@ -36,7 +36,6 @@ router.get("/profile", isLoggedIn, async(req, res) => {
   
 });
 
-
 /*router.get("/login", isLoggedOut, (req, res) => {
   //console.log('req session', req.session);
   res.redirect("/");
