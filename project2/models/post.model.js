@@ -10,7 +10,6 @@ const postSchema = new Schema(
     // comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }], // we will update this field a bit later when we create review model
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );

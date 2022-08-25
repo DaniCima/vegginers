@@ -118,6 +118,10 @@ a{
 .apiBtn{
   margin-left: 15px;
 }
+.cnt{
+  display: flex;
+  flex-direction: column-reverse;
+}
 .profile-content{
   margin-left: 15px;
   margin-right: 15px;
