@@ -17,15 +17,27 @@ margin-top: 2%;
 height: 90vh;
 }
 .logo{
-  height: 60px;
-  width: auto;
-  margin-left: 50px;
+  width: 70px;
+  margin-left: 15px;
 }
 .logoDiv{
-  display: flex;
+  display: inline-block;
   align-items: center;
   font-family: 'Courgette', cursive;
-  width: 50%;
+  margin-top: 15px;
+}
+.logoDiv a{
+  font-size: 30px;
+}
+.logout {
+  display: inline-block;
+  right: 0;
+  text-align: right;
+  margin-top: 30px;
+  vertical-align: top;
+}
+.col-7.logout{
+  width: 64%;
 }
 .frontElements{
   width: 100vw;
@@ -42,7 +54,6 @@ h2{
   margin: 0 auto;
   align-items:center;
   padding: 0 15px;
-  height: 90vh;
   width: 40vw;
   border: 2px solid rgb(201, 199, 199);
 }
@@ -96,24 +107,63 @@ input[type=text], input[type=password]{
 a{
   text-decoration: none;
   color: black;
-  
+}
+.profile-content{
+  margin-left: 15px;
+  margin-right: 15px;
 }
 .btnCreatePost{
   color: white;
   width: 150px;
 }
 .elementsProfile{
-  border: 2px solid rgb(201, 199, 199);
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  flex-direction: column;
-  align-items:center;
-  padding: 0 15px;
+    border: 2px solid rgb(201, 199, 199);
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    margin-top: 15px;
+    max-width: 1200px;
 }
+
 .titleProfile{
   text-align: center;
-  font-size: 60px;
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 35px;
+}
+
+.content-header-profile {
+  width: 70%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+}
+.content-header-profile span {
+  vertical-align: top;
+  margin-right: 5px;
+}
+.content-header-profile span.username-profile {
+  margin-right: 20px;
+}
+form.header-logout {
+  display: inline-block;
+}
+.resize {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  text-align: center;
+  margin-top: 100px;
+}
+.tiltePostDiv{
+  border: 2px solid rgb(231, 231, 231);
+  width: 100%;
+  margin:15px;
+  padding-left: 15px;
 }
 
 /*Create post form */
@@ -124,7 +174,7 @@ a{
 
 .post-container{
   display: flex;
-	flex-direction: column;
+	flex-direction:column;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: center;
@@ -142,6 +192,19 @@ a{
       font-size: 36px;
     }
    }
+/*Edit form Page*/
+.signupform a.btnEditPage, .signupform a.btnDeletePage{
+  width: 49%;
+}
+.edit-delete-form label {
+  margin: 15px 0;
+}
+.edit-delete-form input {
+  margin: 0;
+}
+.divDescriptionEditPost{
+  margin-bottom: 5%;
+}
 
    /* Small devices (landscape phones, 576px and up)*/
    @media (min-width: 576px) { }
@@ -158,3 +221,4 @@ a{
    
    /* XX-Large devices (larger desktops, 1400px and up)*/
    @media (min-width: 1400px){} 
+

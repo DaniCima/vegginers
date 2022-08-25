@@ -3,7 +3,6 @@ const router = express.Router();
 const { isLoggedIn} = require("../middleware/route-guard");
 const { isOwner } = require("../middleware/route-guard");
 const Post = require("../models/post.model");
-
 const fileUploader = require("../config/cloudinary.config");
 
 //CREATE POST
@@ -14,19 +13,18 @@ router.get("/create", (req, res) => {
 });
 
 router.post("/create", fileUploader.single("image"), (req, res) => {
-// router.post("/create", (req, res) => {
-  const { title, history  } = req.body;
-  const { _id } = req.session.currentUser;
-  // const { path } = req.file;
-  console.log("user id", _id);
-  console.log(req.file.path)
-  Post.create({ title, history, imageUrl: req.file.path, owner: _id })
-    .then((newPost) => {
-      res.redirect("/auth/profile");
-    })
-    .catch((err) => console.error(err));
-});
-
+  // router.post("/create", (req, res) => {
+    const { title, history  } = req.body;
+    const { _id } = req.session.currentUser;
+    // const { path } = req.file;
+    console.log("user id", _id);
+    console.log(req.file.path)
+    Post.create({ title, history, imageUrl: req.file.path, owner: _id })
+      .then((newPost) => {
+        res.redirect("/auth/profile");
+      })
+      .catch((err) => console.error(err));
+  });
 
 // SINGLE POST VIEW, TO LOGGED IN USERS
 
@@ -60,12 +58,7 @@ res.redirect("/auth/profile")
 
 router.get("/delete/:postID", isLoggedIn,  function(req, res){
   const {postID} = req.params;
-<<<<<<< HEAD
-  // alert("Are you sure you want to delete this!!?")
-=======
-  //alert("Are you sure you want to delete this!!?")
->>>>>>> 49eef250b47c754683a9140a90c3d0f0e1b53530
-  
+
   Post.findByIdAndDelete(postID)
   .then(function(){
   res.redirect("/auth/profile")
@@ -75,16 +68,6 @@ router.get("/delete/:postID", isLoggedIn,  function(req, res){
   })
   })
 
-router.get("/delete/:postID", function(req, res){
-const {postID} = req.params;
 
-Post.findByIdAndDelete(postID)
-.then(function(){
-res.redirect("/auth/profile")
-}) 
-.catch(function(err){
-  console.log(err)
-})
-})
 
 module.exports = router;
