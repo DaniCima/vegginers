@@ -108,14 +108,17 @@ a{
   text-decoration: none;
   color: black;
 }
+.profileBtns{
+  margin-left: 20px;
+}
+.apiBtn{
+  margin-left: 15px;
+}
 .profile-content{
   margin-left: 15px;
   margin-right: 15px;
 }
-.btnCreatePost{
-  color: white;
-  width: 150px;
-}
+
 .elementsProfile{
     border: 2px solid rgb(201, 199, 199);
     width: 95%;
@@ -160,12 +163,11 @@ form.header-logout {
   margin-top: 100px;
 }
 .tiltePostDiv{
-  border: 2px solid rgb(231, 231, 231);
+  
   width: 100%;
   margin:15px;
-  padding-left: 15px;
+  padding-right: 15px;
 }
-
 /*Create post form */
 
 .post-create-description{
@@ -205,6 +207,31 @@ form.header-logout {
 .divDescriptionEditPost{
   margin-bottom: 5%;
 }
+
+/*API random recipes Page*/
+.mainDishContainer{
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.mainDishDiv{
+display:flex;
+align-items: center;
+flex-direction: column;
+margin-top: 50px;
+}
+.mainDishDiv img{
+max-width: 400px;
+margin-top: 40px;
+margin-bottom: 40px;
+}
+.ingredientsDiv{
+display: flex;
+align-items: center;
+}
+.ingredientsDiv img{
+  margin: 15px;
+}
+
 
    /* Small devices (landscape phones, 576px and up)*/
    @media (min-width: 576px) { }

@@ -1,28 +1,27 @@
+<div class="profileBtns">
+<a class="btn btn-primary btn-lg" href="/posts/create">Create a new Post</a>
+<!--<h4>Get your recipe today:</h4>-->
+  <a class="btn btn-primary btn-lg apiBtn" href="/api/random-recipe">Get your recipe today</a>
+</div>
 
-<button class="btn btn-primary btn-lg"><a class="btnCreatePost" href="/posts/create">Create a new Post</a></button>
-<h4>Get your recipe today:</h4>
-  <a href="/api/random-recipe">Go!</a>
-
-<div class="elementsProfile">
 
 <h2 class="titleProfile">Latest Posts</h2>
 
  {{#each allPosts}}
-    <div class="elementsProfile">
-<div class="post-container">
+<div class="elementsProfile">
+
   <div class="resize">
         <img src="{{this.imageUrl}}" />
   </div>
   <div class="tiltePostDiv">
-      <h3> 
+      <h2> 
         <a class="titlePosts" href="/posts/single-post/{{this._id}}"> {{this.title}} </a>
-      </h3>
+      </h2>
       <h4>{{this.history}}</h4>
   </div>
-      </div>
 </div>
   {{/each}}
 
-  </div>
-</div>
+  
+
 
