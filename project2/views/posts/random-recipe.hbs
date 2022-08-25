@@ -1,0 +1,23 @@
+<h2>Your recipe today:</h2>
+
+{{!-- <h3 id="recipe-title">{{recipe[0].label}}</h3>
+<p id="link"></p>
+<div>
+  <img id="recipe-photo" src="" heigth="200px" />
+</div> --}}
+
+<h3>{{recipe.label}}</h3>
+<div>
+  <img id="recipe-photo" src="{{recipe.image}}" height="300px" />
+</div>
+{{!-- 
+<h5>Ingredientes: {{recipe.ingredients.text}}</h5> --}}
+{{#each recipe.ingredients}}
+  <div class="ingrediente">
+    <img id="ingredient-photo" src="{{image}}" height="50px" />
+    <li><b>{{text}}</b></li>
+
+  </div>
+{{/each}}
+
+<a href="{{recipe.url}}"></a>

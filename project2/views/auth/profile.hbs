@@ -1,11 +1,13 @@
-<div class="col-12 profile-content">
-<button class="btn btn-primary btn-lg"><a class="btnCreatePost" href="/posts/create">Create a new Post</a></button>
 
+<button class="btn btn-primary btn-lg"><a class="btnCreatePost" href="/posts/create">Create a new Post</a></button>
+<h4>Get your recipe today:</h4>
+  <a href="/api/random-recipe">Go!</a>
+
+<div class="elementsProfile">
 
 <h2 class="titleProfile">Latest Posts</h2>
 
-  {{#each allPosts}}
-
+ {{#each allPosts}}
     <div class="elementsProfile">
 <div class="post-container">
   <div class="resize">
@@ -21,6 +23,6 @@
 </div>
   {{/each}}
 
-
-
+  </div>
 </div>
+
